@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Genera i dati per la montagna
+x = np.linspace(0, 10, 1000)
+y = np.sin(x) * np.cos(x) * np.exp(-0.1 * x)
+
+# Crea il grafico della montagna
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, color='blue', linewidth=2)
+plt.fill_between(x, y, color='lightblue')
+
+# Aggiungi titolo e etichette degli assi
+plt.title('Montagna Fittizia', fontsize=16)
+plt.xlabel('Distanza', fontsize=12)
+plt.ylabel('Altezza', fontsize=12)
+
+# Mostra il grafico
+plt.grid(True)
+plt.tight_layout()
+
+# Salva l'immagine come file
+plt.savefig('montagna.png')
+
+# Visualizza l'immagine
+plt.show()
